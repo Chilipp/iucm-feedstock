@@ -60,6 +60,7 @@ install:
     - cmd: conda.exe config --remove channels defaults
     - cmd: conda.exe config --add channels defaults
     - cmd: conda.exe config --add channels conda-forge
+    - cmd: conda.exe config --add channels chilipp
 
     # Configure the VM.
     - cmd: conda.exe install -n root --quiet --yes conda-forge-build-setup
