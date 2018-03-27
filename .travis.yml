@@ -45,13 +45,13 @@ install:
       MINICONDA_URL="https://repo.continuum.io/miniconda"
       MINICONDA_FILE="Miniconda3-latest-${OS_NAME}-x86_64.sh"
       curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
-      bash $MINICONDA_FILE -b
+      bash $MINICONDA_FILE -b -p $HOME/miniconda3
 
     # Configure conda.
     - |
       echo ""
       echo "Configuring conda."
-      source /Users/travis/miniconda3/bin/activate root
+      source $HOME/miniconda3/bin/activate root
       conda config --remove channels defaults
       conda config --add channels defaults
       conda config --add channels conda-forge
